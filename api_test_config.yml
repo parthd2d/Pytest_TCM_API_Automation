@@ -1,0 +1,12 @@
+userName: BROWSERSTACK_USERNAME
+accessKey: BROWSERSTACK_ACCESS_KEY
+buildName: api-test-
+projectName: Pytest Tests
+buildIdentifier: ${BUILD_NUMBER}
+browserstackLocal: false
+parallelsPerPlatform: 1
+CUSTOM_TAG_1: "api"
+framework: pytest
+source: pytest-appium-browserstack:sample-sdk:v1.0
+testObservability: true
+browserstackAutomation: false
