@@ -4,16 +4,14 @@ import requests
 BASE_URL = "https://jsonplaceholder.typicode.com"  # Example API for testing
 
 # Test GET request
-def test_get_posts(record_property):
-    record_property("id","TC-907")
+def test_get_posts():
     url = f"{BASE_URL}/posts"
     response = requests.get(url)
     assert response.status_code == 200, f"Expected 200 but got {response.status_code}"
     assert isinstance(response.json(), list), "Response should be a list"
 
 # Test POST request
-def test_create_post(record_property):
-    record_property("id","TC-908")
+def test_create_post():
     url = f"{BASE_URL}/posts"
     payload = {
         "title": "foo",
@@ -26,8 +24,7 @@ def test_create_post(record_property):
 
 
 # Test PUT request
-def test_update_post(record_property):
-    record_property("id","TC-909")
+def test_update_post():
     url = f"{BASE_URL}/posts/1"
     payload = {
         "id": 1,
@@ -40,8 +37,7 @@ def test_update_post(record_property):
     assert response.json()['title'] == payload['title'], "Title mismatch in response"
 
 # Test DELETE request
-def test_delete_post(record_property):
-    record_property("id","TC-910")
+def test_delete_post():
     url = f"{BASE_URL}/posts/1"
     response = requests.delete(url)
     assert response.status_code == 200, f"Expected 200 but got {response.status_code}"
